@@ -78,17 +78,9 @@ Używamy spójnych typów commitów:
 W projekcie korzystamy z hooków pre-commit.
 
 Każdy po sklonowaniu repo musi wykonać:
-- pip install pre-commit
+- pip3 install pre-commit
 
-Ewentualnie (w przypadku problemów):
-- python3 -m pip install pre-commit
-- python3 -m pip show pre-commit
-- echo 'export PATH="{lokalizacja-instalacji-pre-commit}" >> ~/.zshrc LUB ~/.bashrc
-- source ~/.zshrc LUB ~/.bashrc
-
----
-
-I na końcu w katalogu głównym repo:
+I w katalogu głównym repo:
 - pre-commit install
 
 Od tej pory:
