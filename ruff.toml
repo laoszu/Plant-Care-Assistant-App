@@ -24,7 +24,7 @@ parametrize-names-type = "tuple"
 ]
 
 
-[lint.format]
+[format]
 quote-style = "double"
 indent-style = "space"
 line-ending = "auto"
