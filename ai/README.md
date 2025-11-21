@@ -10,7 +10,7 @@
 
 ## Budowanie obrazów Dockera
 
-Wszystkie poniższe polecenia zakładają, że jesteś w katalogu `ai/`.
+***Wszystkie poniższe polecenia zakładają, że jesteś w katalogu `ai/`!***
 
 ### Budowanie i uruchomienie (CPU)
 
