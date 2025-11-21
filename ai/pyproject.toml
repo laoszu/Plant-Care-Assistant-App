@@ -1,0 +1,92 @@
+[tool.setuptools.packages.find]
+
+where = ["src"]
+include = ["plant_care_ai"]
+
+[project]
+
+name = "plant-care-ai"
+version = "0.0.1"
+description = "AI module for Plant Care Assistant application"
+readme = "README.md"
+requires-python = "~=3.11"
+
+keywords = ["python", "ai", "plant-care"]
+
+authors = [
+    {name = "Mateusz Golebiewski", email = "matikosowy@gmail.com"},
+    {name = "Oliwia Pawelec", email = "oliwia.paw27@gmail.com"},
+]
+
+maintainers = [
+    {name = "Mateusz Golebiewski", email = "matikosowy@gmail.com"},
+    {name = "Oliwia Pawelec", email = "oliwia.paw27@gmail.com"},
+]
+
+dependencies = [
+    "torch==2.9.1",
+    "torchvision==0.24.1",
+    "pandas==2.3.3",
+    "scikit-learn==1.7.2",
+    "numpy==2.3.4",
+]
+
+[project.optional-dependencies]
+
+dev = [
+    "pytest==9.0.1",
+    "pytest-cov==7.0.0",
+    "ruff==0.14.5",
+    "coverage-badge==1.1.2",
+    "pydantic==2.12.4",
+]
+
+[tool.ruff]
+
+include = [
+    "src/**/*.py",
+    "tests/**/*.py"
+]
+
+line-length = 100
+indent-width = 4
+
+
+[tool.ruff.lint]
+preview = true
+select = ["ALL"]
+extend-ignore = [
+    "D203", # space between 1st line and summary line in docstrings
+    "D213", # docstring summary in multi-line docstring should start at the first line
+    "T201", # allow use of print statements
+    "EXE002", # shebang not required for python files
+]
+
+
+[tool.ruff.lint.flake8-pytest-style]
+parametrize-names-type = "tuple"
+
+[tool.ruff.lint.per-file-ignores]
+
+"tests/**/*.py" = [
+    "FBT003", # allow boolean values in function calls
+    "S101",    # allow use of assert statements in tests
+]
+
+
+
+[tool.ruff.lint.pep8-naming]
+ignore-names = ["df"]
+
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+docstring-code-format = true
+
+[tool.coverage.report]
+
+exclude_also = [
+    "if __name__ == .__main__.:",
+]
