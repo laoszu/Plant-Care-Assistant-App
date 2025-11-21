@@ -5,11 +5,7 @@ ENV PYTHONUNBUFFERED=1
 
 WORKDIR /app
 
-COPY pyproject.toml .
-
-COPY src ./src
-COPY tests ./tests
-COPY scripts ./scripts
+COPY . .
 
 RUN pip install --upgrade pip
 
