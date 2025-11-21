@@ -6,7 +6,7 @@ include = ["plant_care_ai"]
 [project]
 
 name = "plant-care-ai"
-version = "0.0.1"
+version = "0.0.2"
 description = "AI module for Plant Care Assistant application"
 readme = "README.md"
 requires-python = "~=3.11"
@@ -60,6 +60,7 @@ extend-ignore = [
     "D213", # docstring summary in multi-line docstring should start at the first line
     "T201", # allow use of print statements
     "EXE002", # shebang not required for python files
+    "COM812", # conflict with black formatting
 ]
 
 

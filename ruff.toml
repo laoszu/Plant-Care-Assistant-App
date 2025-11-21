@@ -15,6 +15,7 @@ extend-ignore = [
     "D213", # docstring summary in multi-line docstring should start at the first line
     "T201", # allow use of print statements
     "EXE002", # shebang not required for python files
+    "COM812", # conflict with black formatting
 ]
 
 
