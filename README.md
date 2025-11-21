@@ -1,5 +1,11 @@
 # Plant-Care-Assistant-App
 
+## Test Coverage
+| | |
+| --- | --- |
+| AI | ![Coverage](./ai/assets/unit-coverage.svg)
+| Backend | ![Coverage](./backend/assets/unit-coverage.svg)
+
 ## Opis projektu grupowego – Plant Care Assistant
 
 Projekt **„Plant Care Assistant”** to aplikacja webowa wspierająca użytkowników w rozpoznawaniu gatunków roślin oraz udzielaniu porad dotyczących ich pielęgnacji. Celem projektu jest stworzenie intuicyjnego narzędzia, które umożliwi identyfikację roślin domowych na podstawie zdjęcia oraz zaprezentuje najważniejsze informacje o ich wymaganiach i warunkach wzrostu.

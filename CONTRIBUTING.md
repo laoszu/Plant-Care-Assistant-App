@@ -41,10 +41,12 @@ Zasady PR:
 - PR dotyczy jednego zadania / jednej funkcji
 
 Wymagania przed merge:
-- projekt buduje się lokalnie,
+- projekt buduje się poprawnie,
 - linter/formatter przeszedł,
 - testy przeszły,
 - PR ma co najmniej 1 approve po review,
+
+(Automatycznie poprzez GitHub Actions CI)
 
 
 ## Testy

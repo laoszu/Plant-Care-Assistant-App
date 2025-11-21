@@ -10,7 +10,12 @@ indent-width = 4
 [lint]
 preview = true
 select = ["ALL"]
-extend-ignore = ["EXE002"]
+extend-ignore = [
+    "D203", # space between 1st line and summary line in docstrings
+    "D213", # docstring summary in multi-line docstring should start at the first line
+    "T201", # allow use of print statements
+    "EXE002", # shebang not required for python files
+]
 
 
 [lint.flake8-pytest-style]
