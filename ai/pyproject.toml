@@ -6,7 +6,7 @@ include = ["plant_care_ai"]
 [project]
 
 name = "plant-care-ai"
-version = "0.0.1"
+version = "0.0.2"
 description = "AI module for Plant Care Assistant application"
 readme = "README.md"
 requires-python = "~=3.11"
