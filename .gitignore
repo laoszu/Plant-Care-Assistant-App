@@ -213,3 +213,7 @@ __marimo__/
 
 # Coverage
 .coverage
+
+# ai/
+ai/data/plantnet_300K/
+
