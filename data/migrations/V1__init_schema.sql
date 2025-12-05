@@ -14,8 +14,7 @@ CREATE TABLE plant_info (
     common_name VARCHAR(255) NOT NULL,
     species_name VARCHAR(255) UNIQUE NOT NULL,
     image_reference VARCHAR(512), -- this is a file path or URL.
-    description TEXT, -- this could be really long, so it's a TEXT field
-    INDEX species_name_idx ON plant_info (species_name); -- for faster lookups
+    description TEXT -- this could be really long, so it's a TEXT field
 );
 
 COMMENT ON TABLE users IS 'Stores user authentication and profile data.';
