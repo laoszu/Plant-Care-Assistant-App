@@ -2,7 +2,6 @@
 
 """DataLoader wrapper for PlantNet dataset splits."""
 
-
 from torch.utils.data import DataLoader
 from torchvision import transforms
 
@@ -37,7 +36,13 @@ class PlantNetDataLoader:
         self.num_classes = len(self.train_dataset.classes)
 
     def get_train_loader(self) -> DataLoader:
-        """Get DataLoader for training data (with shuffling)."""
+        """Get DataLoader for training data.
+
+        Returns:
+            DataLoader: DataLoader configured for training
+            (with shuffling enabled)
+
+        """
         return DataLoader(
             self.train_dataset,
             batch_size=self.batch_size,
@@ -45,14 +50,26 @@ class PlantNetDataLoader:
         )
 
     def get_val_loader(self) -> DataLoader:
-        """Get DataLoader for validation data (no shuffling)."""
+        """Get DataLoader for validation data.
+
+        Returns:
+            DataLoader: DataLoader configured for validation
+            (without shuffling)
+
+        """
         return DataLoader(
             self.val_dataset,
             batch_size=self.batch_size
         )
 
     def get_test_loader(self) -> DataLoader:
-        """Get DataLoader for test data (no shuffling)."""
+        """Get DataLoader for test data.
+
+        Returns:
+            DataLoader: DataLoader configured for testing
+            (without shuffling)
+
+        """
         return DataLoader(
             self.test_dataset,
             batch_size=self.batch_size

@@ -48,7 +48,12 @@ class PlantNetDataset(Dataset):
         print(f"Loaded {len(self.paths)} samples, {len(self.classes)} classes")
 
     def _load_paths(self) -> list[tuple[Path, str]]:
-        """Find all .jpg images in the split directory."""
+        """Find all .jpg images in the split directory.
+
+        Returns:
+            List of tuples containing (image_path, species_id)
+
+        """
         paths: list[tuple[Path, str]] = []
 
         for species_dir in self.images_dir.iterdir():
@@ -62,7 +67,15 @@ class PlantNetDataset(Dataset):
         return paths
 
     def __getitem__(self, idx: int) -> tuple[torch.Tensor, int]:
-        """Get a single dataset item."""
+        """Get a single dataset item.
+
+        Args:
+            idx: Index of the item to retrieve
+
+        Returns:
+            Tuple containing (image_tensor, label_index)
+
+        """
         img_path, species_id = self.paths[idx]
 
         image = Image.open(img_path).convert("RGB")
@@ -73,5 +86,10 @@ class PlantNetDataset(Dataset):
         return image, self.class_to_idx[species_id]
 
     def __len__(self) -> int:
-        """Get the total number of samples in the dataset."""
+        """Get the total number of samples in the dataset.
+
+        Returns:
+            Number of samples in the dataset
+
+        """
         return len(self.paths)

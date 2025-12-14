@@ -20,6 +20,7 @@ class PlantNetPreprocessor:
     def __init__(
         self,
         img_size: int = 224,
+        *,
         normalize: bool = True,
         augm_strength: float = 0.0
     ) -> None:
@@ -113,7 +114,7 @@ class PlantNetPreprocessor:
 
         return transforms.Compose(transforms_list)
 
-    def get_transform(self, train: bool = False) -> transforms.Compose:
+    def get_transform(self, *, train: bool = False) -> transforms.Compose:
         """Get transform based on mode.
 
         Args:
@@ -127,12 +128,18 @@ class PlantNetPreprocessor:
         return self.get_full_transform() if train else self.get_interference_transform()
 
 
-def get_training_pipeline(img_size: int = 224, augm_strength: float = 0.5) -> transforms.Compose:
+def get_training_pipeline(
+    img_size: int = 224,
+    augm_strength: float = 0.5
+) -> transforms.Compose:
     """Get training pipeline with augmentation.
 
     Args:
         img_size: Target image size
         augm_strength: Augmentation strength (0.0-1.0)
+
+    Returns:
+        transforms.Compose: Training transform pipeline with augmentation
 
     """
     preprocessor = PlantNetPreprocessor(
@@ -150,7 +157,7 @@ def get_inference_pipeline(img_size: int = 224) -> transforms.Compose:
         img_size: Target image size
 
     Returns:
-        Inference transform pipeline
+        transforms.Compose: Inference transform pipeline
 
     """
     preprocessor = PlantNetPreprocessor(
@@ -161,7 +168,10 @@ def get_inference_pipeline(img_size: int = 224) -> transforms.Compose:
     return preprocessor.get_interference_transform()
 
 
-def preprocess_single_image(image: str | Path, img_size: int = 224) -> torch.Tensor:
+def preprocess_single_image(
+    image: str | Path,
+    img_size: int = 224
+) -> torch.Tensor:
     """Preprocess single image for inference.
 
     Args:
@@ -169,7 +179,7 @@ def preprocess_single_image(image: str | Path, img_size: int = 224) -> torch.Ten
         img_size: Target size
 
     Returns:
-        Tensor with shape (1, C, H, W) ready for model input
+        torch.Tensor: Tensor with shape (1, C, H, W) ready for model input
 
     """
     image = Image.open(image).convert("RGB")
